@@ -14,6 +14,8 @@ With these environment variables in place, run the script:
 
 ```$ npm start```
 
+This will create a directory with a `conversations.json` file containing all conversations from the inbox. Per message a directory is created containing all attachments for the message.
+
 ### Disclaimer
 
 Use at your own risk, no guarantees, don't try this at home, etc. etc.
