@@ -1,14 +1,21 @@
+#!/usr/bin/env node
 'use strict';
 
 const Promise = require('bluebird');
-const exportInbox = require('./lib/inbox');
+const exportInbox = require('../lib/inbox');
 
-const inboxId = process.env.FRONT_INBOX_ID || '';
+const argv = require('yargs')
+	.usage('Usage: $0 [options] <inbox-id>')
+	.demand(1)
+	.help('help')
+	.argv;
+
+const inboxId = argv._[0];
 const basePath = inboxId || '';
 
 new Promise((resolve, reject) => {
 	if (!inboxId) {
-		reject(new Error('No FRONT_INBOX_ID found.'));
+		reject(new Error('No Front Inbox ID found.'));
 	}
 	resolve(inboxId);
 })
