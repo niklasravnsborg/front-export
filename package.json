@@ -1,6 +1,6 @@
 {
   "name": "front-export",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "CLI tool for exporting all conversations in a Front inbox",
   "main": "index.js",
   "bin": {
@@ -13,6 +13,7 @@
     "delay": "^1.3.1",
     "dotenv": "^4.0.0",
     "mkdirp": "^0.5.1",
+    "nodemailer": "^4.2.0",
     "yargs": "^4.2.0"
   },
   "author": "Niklas Ravnsborg-Gjertsen",
