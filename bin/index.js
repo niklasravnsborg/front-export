@@ -4,8 +4,10 @@
 // Load .env for later use in lib/api.js
 require('dotenv').config();
 
-const Promise = require('bluebird');
+const api = require('../lib/api');
 const exportInbox = require('../lib/inbox');
+const performRequest = require('../lib/api');
+const Promise = require('bluebird');
 
 const argv = require('yargs')
 	.usage('Usage: $0 [options] <inbox-id>')
@@ -13,14 +15,31 @@ const argv = require('yargs')
 	.help('help')
 	.argv;
 
-const inboxId = argv._[0];
-const basePath = inboxId || '';
+const inboxName = argv._[0];
+
+function getInboxId(inboxName) {
+	return performRequest('inboxes').then(res => res.data)
+		.then(inboxes => {
+			const inbox = inboxes._results.find(inbox =>
+				inbox.send_as === inboxName ? inbox : ''
+			);
+
+			const inboxId = inbox ? inbox.id : '';
+			return inboxId;
+		});
+}
 
 new Promise((resolve, reject) => {
-	if (!inboxId) {
-		reject(new Error('No Front Inbox ID found.'));
+	if (!inboxName) {
+		reject(new Error('Provide an inbox name e.g. hello@mymail.com.'));
 	}
-	resolve(inboxId);
+
+	getInboxId(inboxName).then(inboxId => {
+		if (!inboxId) {
+			reject(new Error('No Front inbox with this address was found.'));
+		}
+		resolve(inboxId);
+	});
 })
-.then(inboxId => exportInbox(inboxId, basePath))
+.then(inboxId => exportInbox(inboxId, inboxName))
 .catch(err => console.error(err.stack ? err.stack : err));
