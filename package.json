@@ -1,10 +1,13 @@
 {
   "name": "front-export",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "CLI tool for exporting all conversations in a Front inbox",
   "main": "index.js",
   "bin": {
     "front-export": "./bin/index.js"
+  },
+  "scripts": {
+    "start": "./bin/index.js"
   },
   "dependencies": {
     "axios": "^0.16.2",
