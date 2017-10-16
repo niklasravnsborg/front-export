@@ -1,6 +1,9 @@
 #!/usr/bin/env node
 'use strict';
 
+// Load .env for later use in lib/api.js
+require('dotenv').config();
+
 const Promise = require('bluebird');
 const exportInbox = require('../lib/inbox');
 
