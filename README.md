@@ -22,13 +22,23 @@ FRONT_JSON_WEB_TOKEN: pasteYourJsonWebTokenHere
 
 With these environment variable in place, run the script:
 
-```$ npm start your@email.com```
+`$ npm start your@email.com`
 
 You have to replace `your@email.com` with an email address from your [Front inboxes](https://app.frontapp.com/settings/tim:21314/inboxes).
 
 This will create a directory with a `conversations.json` file containing all conversations from the inbox. Per message a directory is created containing all attachments for the message.
 
-It will also create a `sent/` and `recieved/` folder with the corresponding `.eml` files which you can import to other mail apps.
+It will also create a `sent/` and `received/` folder with the corresponding `.eml` files which you can import to other mail apps.
+
+### How do I export individual inboxes
+
+The Front API only shows team inboxes. There is a workaround though:
+
+1. In Front settings create a new folder
+2. Go to your individual inbox settings and click `Move channel` at the bottom
+3. Move it to the created folder inbox
+
+Now you can export the inbox just like any other.
 
 ## Disclaimer
 
