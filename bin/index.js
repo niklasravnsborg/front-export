@@ -25,6 +25,7 @@ function getInboxId(inboxName) {
 			);
 
 			const inboxId = inbox ? inbox.id : '';
+			console.log('Inbox Id found: ' + inboxId)
 			return inboxId;
 		});
 }
