@@ -10,6 +10,10 @@ and to `.eml` files which you can import to apps like Outlook or Thunderbird.
 
 ## Usage
 
+Install dependencies for this package with NPM:
+
+`$ npm install`
+
 You need to set an environment variable by creating a `.env` text file in the
 root directory of this project. It contains your Front JSON Web Token which you
 have to copy from your [Front API Preferences](https://app.frontapp.com/settings/tools/api).
