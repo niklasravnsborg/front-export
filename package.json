@@ -17,6 +17,7 @@
     "dotenv": "^4.0.0",
     "mkdirp": "^0.5.1",
     "nodemailer": "^4.2.0",
+    "promise-limit": "^2.7.0",
     "yargs": "^4.2.0"
   },
   "author": "Niklas Ravnsborg-Gjertsen",
