@@ -1,10 +1,11 @@
 {
   "name": "front-export",
   "description": "CLI tool for exporting all conversations in a Front inbox",
-  "author": "Niklas Ravnsborg-Gjertsen",
+  "author": "Niklas Ravnsborg",
   "contributors": [
     "Leon de Rijke"
   ],
+  "license": "MIT",
   "private": true,
   "main": "index.js",
   "bin": {
